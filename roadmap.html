@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Engineering Mastery Roadmap — Remote Jobs in Germany</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c12;
+    --surface: #0d1320;
+    --surface2: #111827;
+    --border: #1e2d45;
+    --accent: #00d4ff;
+    --accent2: #7c3aed;
+    --accent3: #10b981;
+    --accent4: #f59e0b;
+    --accent5: #ef4444;
+    --text: #e2e8f0;
+    --text-muted: #64748b;
+    --text-dim: #94a3b8;
+    --glow: rgba(0, 212, 255, 0.15);
+    --phase1: #00d4ff;
+    --phase2: #10b981;
+    --phase3: #7c3aed;
+    --phase4: #f59e0b;
+    --phase5: #ef4444;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* GRID BACKGROUND */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* HEADER */
+  header {
+    position: relative;
+    z-index: 10;
+    padding: 0 2rem;
+    border-bottom: 1px solid var(--border);
+    background: rgba(8,12,18,0.95);
+    backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+  }
+
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .logo span { color: var(--text-muted); }
+
+  .header-stats {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .stat-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.4rem 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+
+  .stat-pill .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent3);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .overall-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+  }
+
+  .progress-bar-sm {
+    width: 120px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .progress-bar-sm .fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 10px;
+    transition: width 0.5s ease;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0,212,255,0.08);
+    border: 1px solid rgba(0,212,255,0.25);
+    border-radius: 100px;
+    padding: 0.35rem 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    max-width: 680px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    max-width: 900px;
+  }
+
+  .hero-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+
+  .hero-card.c1::before { background: var(--phase1); }
+  .hero-card.c2::before { background: var(--phase2); }
+  .hero-card.c3::before { background: var(--phase3); }
+  .hero-card.c4::before { background: var(--phase4); }
+  .hero-card.c5::before { background: var(--phase5); }
+
+  .hero-card-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .c1 .hero-card-num { color: var(--phase1); }
+  .c2 .hero-card-num { color: var(--phase2); }
+  .c3 .hero-card-num { color: var(--phase3); }
+  .c4 .hero-card-num { color: var(--phase4); }
+  .c5 .hero-card-num { color: var(--phase5); }
+
+  .hero-card-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* SEARCH & FILTERS */
+  .controls {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .search-box {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .search-box input {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-box input:focus { border-color: var(--accent); }
+  .search-box input::placeholder { color: var(--text-muted); }
+
+  .search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .filter-btns {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    color: var(--text-muted);
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0,212,255,0.06);
+  }
+
+  .reset-btn {
+    background: rgba(239,68,68,0.08);
+    border: 1px solid rgba(239,68,68,0.3);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    color: #ef4444;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .reset-btn:hover {
+    background: rgba(239,68,68,0.15);
+  }
+
+  /* MAIN CONTENT */
+  .content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  /* PHASE SECTION */
+  .phase-section {
+    margin-bottom: 4rem;
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .phase-header::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+  }
+
+  .phase1 .phase-header::before { background: var(--phase1); box-shadow: 0 0 20px var(--phase1); }
+  .phase2 .phase-header::before { background: var(--phase2); box-shadow: 0 0 20px var(--phase2); }
+  .phase3 .phase-header::before { background: var(--phase3); box-shadow: 0 0 20px var(--phase3); }
+  .phase4 .phase-header::before { background: var(--phase4); box-shadow: 0 0 20px var(--phase4); }
+  .phase5 .phase-header::before { background: var(--phase5); box-shadow: 0 0 20px var(--phase5); }
+
+  .phase-icon {
+    width: 52px; height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .phase1 .phase-icon { background: rgba(0,212,255,0.12); border: 1px solid rgba(0,212,255,0.3); }
+  .phase2 .phase-icon { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); }
+  .phase3 .phase-icon { background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.3); }
+  .phase4 .phase-icon { background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.3); }
+  .phase5 .phase-icon { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); }
+
+  .phase-meta { flex: 1; }
+
+  .phase-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.25rem;
+  }
+
+  .phase1 .phase-tag { color: var(--phase1); }
+  .phase2 .phase-tag { color: var(--phase2); }
+  .phase3 .phase-tag { color: var(--phase3); }
+  .phase4 .phase-tag { color: var(--phase4); }
+  .phase5 .phase-tag { color: var(--phase5); }
+
+  .phase-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .phase-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .phase-progress-wrap {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .phase-pct {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .phase1 .phase-pct { color: var(--phase1); }
+  .phase2 .phase-pct { color: var(--phase2); }
+  .phase3 .phase-pct { color: var(--phase3); }
+  .phase4 .phase-pct { color: var(--phase4); }
+  .phase5 .phase-pct { color: var(--phase5); }
+
+  .phase-bar {
+    width: 100px;
+    height: 6px;
+    background: var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: auto;
+  }
+
+  .phase-bar .fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.6s ease;
+  }
+
+  .phase1 .phase-bar .fill { background: var(--phase1); }
+  .phase2 .phase-bar .fill { background: var(--phase2); }
+  .phase3 .phase-bar .fill { background: var(--phase3); }
+  .phase4 .phase-bar .fill { background: var(--phase4); }
+  .phase5 .phase-bar .fill { background: var(--phase5); }
+
+  /* COURSE GRID */
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.25rem;
+  }
+
+  /* COURSE CARD */
+  .course-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .course-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0,212,255,0.3);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+
+  .course-card.completed {
+    border-color: rgba(16,185,129,0.4);
+  }
+
+  .course-card.completed::after {
+    content: '✓';
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 24px; height: 24px;
+    background: var(--accent3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: white;
+    font-weight: 700;
+  }
+
+  .course-thumb {
+    width: 100%;
+    height: 180px;
+    background: var(--surface2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .course-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+  }
+
+  .thumb-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: linear-gradient(135deg, var(--surface2), var(--surface));
+  }
+
+  .play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .course-card:hover .play-overlay { opacity: 1; }
+
+  .play-btn-big {
+    width: 56px; height: 56px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 1.2rem;
+    box-shadow: 0 0 30px rgba(0,212,255,0.5);
+  }
+
+  .course-duration {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    background: rgba(0,0,0,0.85);
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: white;
+  }
+
+  .course-rank {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background: rgba(0,0,0,0.85);
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+  }
+
+  .course-body {
+    padding: 1.25rem;
+  }
+
+  .course-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid;
+  }
+
+  .tag-frontend { color: var(--phase1); border-color: rgba(0,212,255,0.3); background: rgba(0,212,255,0.06); }
+  .tag-backend { color: var(--phase2); border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.06); }
+  .tag-devops { color: var(--phase3); border-color: rgba(124,58,237,0.3); background: rgba(124,58,237,0.06); }
+  .tag-database { color: var(--phase4); border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.06); }
+  .tag-security { color: var(--phase5); border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.06); }
+  .tag-core { color: #c084fc; border-color: rgba(192,132,252,0.3); background: rgba(192,132,252,0.06); }
+  .tag-testing { color: #fb923c; border-color: rgba(251,146,60,0.3); background: rgba(251,146,60,0.06); }
+  .tag-ai { color: #f472b6; border-color: rgba(244,114,182,0.3); background: rgba(244,114,182,0.06); }
+  .tag-tools { color: #67e8f9; border-color: rgba(103,232,249,0.3); background: rgba(103,232,249,0.06); }
+
+  .course-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+
+  .course-channel {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 0.75rem;
+  }
+
+  .course-desc {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .course-skills {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .skill-chip {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--text-dim);
+  }
+
+  .course-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .watch-btn {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: 0.55rem 1rem;
+    color: var(--accent);
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+  }
+
+  .watch-btn:hover {
+    background: var(--accent);
+    color: #000;
+  }
+
+  .complete-btn {
+    width: 36px; height: 36px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .complete-btn:hover {
+    border-color: var(--accent3);
+    color: var(--accent3);
+  }
+
+  .course-card.completed .complete-btn {
+    background: rgba(16,185,129,0.15);
+    border-color: var(--accent3);
+    color: var(--accent3);
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: transform 0.3s;
+  }
+
+  .modal-overlay.open .modal {
+    transform: scale(1);
+  }
+
+  .modal-video {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background: #000;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+  }
+
+  .modal-video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .modal-body {
+    padding: 2rem;
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .modal-close {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  .modal-close:hover { color: var(--text); border-color: var(--text-muted); }
+
+  .modal-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-info-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+  }
+
+  .modal-info-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.25rem;
+  }
+
+  .modal-info-val {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .modal-desc {
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .modal-what-learn h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .learn-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .learn-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+  }
+
+  .learn-item::before {
+    content: '→';
+    color: var(--accent);
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+  }
+
+  .modal-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .modal-mark-btn {
+    flex: 1;
+    min-width: 140px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .modal-mark-btn.mark-done {
+    background: rgba(16,185,129,0.1);
+    border: 1px solid rgba(16,185,129,0.4);
+    color: var(--accent3);
+  }
+
+  .modal-mark-btn.mark-done:hover {
+    background: rgba(16,185,129,0.2);
+  }
+
+  .modal-mark-btn.open-yt {
+    background: rgba(239,68,68,0.1);
+    border: 1px solid rgba(239,68,68,0.4);
+    color: #ff6b6b;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .modal-mark-btn.open-yt:hover {
+    background: rgba(239,68,68,0.2);
+  }
+
+  /* NOTES */
+  .notes-area {
+    margin-top: 1rem;
+  }
+
+  .notes-area label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  .notes-area textarea {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 80px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .notes-area textarea:focus { border-color: var(--accent); }
+  .notes-area textarea::placeholder { color: var(--text-muted); }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--accent3);
+    border-radius: 10px;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--accent3);
+    z-index: 2000;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .toast.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* TIPS SECTION */
+  .tips-section {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .tip-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+
+  .tip-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+
+  .tip-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .tip-text {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* SECTION HEADINGS */
+  .section-heading {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-heading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+  /* HIDDEN */
+  .hidden { display: none !important; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .course-grid { grid-template-columns: 1fr; }
+    .modal { max-height: 95vh; }
+    .header-inner { gap: 0.5rem; }
+    .overall-progress { display: none; }
+  }
+
+  /* COMPLETION STARS */
+  .stars-container {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .star {
+    font-size: 0.7rem;
+    color: var(--border);
+    transition: color 0.2s;
+  }
+
+  .star.lit { color: var(--accent4); }
+
+  /* BACK TO TOP */
+  .back-top {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 44px; height: 44px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 1rem;
+    transition: all 0.2s;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .back-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .back-top:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* PHASE NAV */
+  .phase-nav {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .phase-nav::-webkit-scrollbar { display: none; }
+
+  .phase-nav-btn {
+    flex-shrink: 0;
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-family: 'Syne', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .phase-nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .phase-nav-btn.p1:hover, .phase-nav-btn.p1.active { border-color: var(--phase1); color: var(--phase1); background: rgba(0,212,255,0.06); }
+  .phase-nav-btn.p2:hover, .phase-nav-btn.p2.active { border-color: var(--phase2); color: var(--phase2); background: rgba(16,185,129,0.06); }
+  .phase-nav-btn.p3:hover, .phase-nav-btn.p3.active { border-color: var(--phase3); color: var(--phase3); background: rgba(124,58,237,0.06); }
+  .phase-nav-btn.p4:hover, .phase-nav-btn.p4.active { border-color: var(--phase4); color: var(--phase4); background: rgba(245,158,11,0.06); }
+  .phase-nav-btn.p5:hover, .phase-nav-btn.p5.active { border-color: var(--phase5); color: var(--phase5); background: rgba(239,68,68,0.06); }
+
+  .difficulty-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 100px;
+  }
+
+  .diff-beginner { background: rgba(16,185,129,0.12); color: var(--accent3); border: 1px solid rgba(16,185,129,0.3); }
+  .diff-intermediate { background: rgba(245,158,11,0.12); color: var(--accent4); border: 1px solid rgba(245,158,11,0.3); }
+  .diff-advanced { background: rgba(239,68,68,0.12); color: var(--phase5); border: 1px solid rgba(239,68,68,0.3); }
+
+  .priority-indicator {
+    position: absolute;
+    top: 0; right: 0;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #000;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span>// </span>WebMaster<span>.roadmap</span>
+    </div>
+    <div class="header-stats">
+      <div class="stat-pill">
+        <span class="dot"></span>
+        <span id="completed-count">0</span> / <span id="total-count">0</span> Completed
+      </div>
+      <div class="overall-progress">
+        <span id="overall-pct">0%</span>
+        <div class="progress-bar-sm">
+          <div class="fill" id="overall-bar" style="width:0%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🎯 Optimized for Remote Jobs in Germany from Pakistan</div>
+  <h1>Master <em>Web Engineering</em><br>From Zero to Elite</h1>
+  <p class="hero-sub">The complete, priority-sorted roadmap covering every language, tool, framework, and concept in modern web engineering — from HTML basics to AI-integrated SaaS platforms. Built to get you employed remotely in Germany as fast as possible.</p>
+  <div class="hero-cards">
+    <div class="hero-card c1">
+      <div class="hero-card-num" id="phase1-total">10</div>
+      <div class="hero-card-label">Phase 1 Topics<br><span style="color:var(--phase1);font-size:0.7rem">Core Essentials</span></div>
+    </div>
+    <div class="hero-card c2">
+      <div class="hero-card-num" id="phase2-total">10</div>
+      <div class="hero-card-label">Phase 2 Topics<br><span style="color:var(--phase2);font-size:0.7rem">Job Ready</span></div>
+    </div>
+    <div class="hero-card c3">
+      <div class="hero-card-num" id="phase3-total">9</div>
+      <div class="hero-card-label">Phase 3 Topics<br><span style="color:var(--phase3);font-size:0.7rem">Senior Level</span></div>
+    </div>
+    <div class="hero-card c4">
+      <div class="hero-card-num" id="phase4-total">8</div>
+      <div class="hero-card-label">Phase 4 Topics<br><span style="color:var(--phase4);font-size:0.7rem">Specializations</span></div>
+    </div>
+    <div class="hero-card c5">
+      <div class="hero-card-num" id="phase5-total">6</div>
+      <div class="hero-card-label">Phase 5 Topics<br><span style="color:var(--phase5);font-size:0.7rem">Advanced/Optional</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE NAV -->
+<nav class="phase-nav">
+  <button class="phase-nav-btn p1" onclick="scrollToPhase('phase1')">⚡ Phase 1 — Core Essentials</button>
+  <button class="phase-nav-btn p2" onclick="scrollToPhase('phase2')">🚀 Phase 2 — Job Ready</button>
+  <button class="phase-nav-btn p3" onclick="scrollToPhase('phase3')">🔥 Phase 3 — Senior Level</button>
+  <button class="phase-nav-btn p4" onclick="scrollToPhase('phase4')">💎 Phase 4 — Specializations</button>
+  <button class="phase-nav-btn p5" onclick="scrollToPhase('phase5')">🌌 Phase 5 — Advanced/Optional</button>
+</nav>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search-input" placeholder="Search topics, tools, frameworks..." oninput="filterCourses()">
+  </div>
+  <div class="filter-btns">
+    <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+    <button class="filter-btn" onclick="setFilter('frontend', this)">Frontend</button>
+    <button class="filter-btn" onclick="setFilter('backend', this)">Backend</button>
+    <button class="filter-btn" onclick="setFilter('devops', this)">DevOps</button>
+    <button class="filter-btn" onclick="setFilter('database', this)">Database</button>
+    <button class="filter-btn" onclick="setFilter('security', this)">Security</button>
+    <button class="filter-btn" onclick="setFilter('testing', this)">Testing</button>
+    <button class="filter-btn" onclick="setFilter('ai', this)">AI</button>
+    <button class="filter-btn" onclick="setFilter('completed', this)">✓ Completed</button>
+  </div>
+  <button class="reset-btn" onclick="resetAllProgress()">Reset Progress</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="content" id="main-content">
+  <!-- Phases rendered by JS -->
+</main>
+
+<!-- TIPS SECTION -->
+<section class="tips-section">
+  <h2 class="section-heading">💡 Pro Tips for Getting Remote Jobs in Germany</h2>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🎯</div>
+      <div class="tip-title">Focus on Phase 1 + 2 First</div>
+      <div class="tip-text">HTML, CSS, JavaScript, React, Node.js, TypeScript, Git, and SQL are what 90% of German remote job listings require. Master these before anything else to become employable fast.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🇩🇪</div>
+      <div class="tip-title">German Job Market Reality</div>
+      <div class="tip-text">German companies highly value React + TypeScript + Node.js stack. Many Berlin/Munich startups hire globally remote. Time zone overlap is important — Pakistan (PKT, UTC+5) overlaps well with Germany (UTC+1/+2).</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📁</div>
+      <div class="tip-title">Build a Strong GitHub Portfolio</div>
+      <div class="tip-text">Create 3-5 production-quality projects on GitHub. Include a SaaS app, a REST API, and a React dashboard. Employers check GitHub before interviews. Write clear READMEs in English.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌐</div>
+      <div class="tip-title">English is Non-Negotiable</div>
+      <div class="tip-text">95% of remote German tech jobs work in English. You don't need German to start. Focus on technical English communication, writing clear commit messages, PRs, and documentation.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">⏰</div>
+      <div class="tip-title">Timeline Estimate</div>
+      <div class="tip-text">With 6-8 hours/day: Phase 1 (3-4 months) → First job applications. Phase 1+2 (6-7 months) → Strong candidate. Phase 1+2+3 (10-12 months) → Senior-level applications possible.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💼</div>
+      <div class="tip-title">Where to Find Remote Jobs</div>
+      <div class="tip-text">Use: LinkedIn (filter: remote, Germany), Arc.dev, Toptal, Remote.co, WeWorkRemotely, Glassdoor, WorkInTech. Apply to Berlin startups — they're most open to remote/international hiring.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🤝</div>
+      <div class="tip-title">Open Source Contributions</div>
+      <div class="tip-text">Contribute to popular open source projects on GitHub. Even small bug fixes or documentation improvements demonstrate real-world collaboration skills that German companies love.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💰</div>
+      <div class="tip-title">Salary Expectations (Remote)</div>
+      <div class="tip-text">Junior from Pakistan working remotely for Germany: €25,000–€45,000/year. Mid: €45,000–€70,000. Senior: €70,000–€100,000+. Always negotiate — Pakistani candidates often undersell themselves.</div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalIfOutside(event)">
+  <div class="modal" id="modal">
+    <div class="modal-video">
+      <iframe id="modal-iframe" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+    <div class="modal-body">
+      <div class="modal-header">
+        <div>
+          <div id="modal-tags" class="course-tags" style="margin-bottom:0.5rem"></div>
+          <div class="modal-title" id="modal-title"></div>
+          <div class="course-channel" id="modal-channel"></div>
+        </div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-info-grid">
+        <div class="modal-info-item">
+          <div class="modal-info-label">Duration</div>
+          <div class="modal-info-val" id="modal-duration"></div>
+        </div>
+        <div class="modal-info-item">
+          <div class="modal-info-label">Difficulty</div>
+          <div class="modal-info-val" id="modal-difficulty"></div>
+        </div>
+        <div class="modal-info-item">
+          <div class="modal-info-label">Phase</div>
+          <div class="modal-info-val" id="modal-phase"></div>
+        </div>
+        <div class="modal-info-item">
+          <div class="modal-info-label">Job Relevance</div>
+          <div class="modal-info-val" id="modal-relevance"></div>
+        </div>
+      </div>
+      <div class="modal-desc" id="modal-desc"></div>
+      <div class="modal-what-learn">
+        <h4>// What You Will Learn</h4>
+        <div class="learn-list" id="modal-learn"></div>
+      </div>
+      <div class="notes-area">
+        <label>// Your Notes</label>
+        <textarea id="modal-notes" placeholder="Add your personal notes, key learnings, and progress here..."></textarea>
+      </div>
+      <div class="modal-actions" style="margin-top:1rem">
+        <button class="modal-mark-btn mark-done" id="modal-mark-btn" onclick="toggleCompleteFromModal()">✓ Mark as Complete</button>
+        <a class="modal-mark-btn open-yt" id="modal-yt-link" href="#" target="_blank" rel="noopener">▶ Open on YouTube</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ============================================================
+// ROADMAP DATA — All 43 courses
+// ============================================================
+const roadmap = [
+  // ═══════════════════════════════════════════════════
+  // PHASE 1 — CORE ESSENTIALS (Most critical to learn first)
+  // ═══════════════════════════════════════════════════
+  {
+    id: 'html5',
+    phase: 1,
+    title: 'HTML5 — The Foundation of Every Web Page',
+    channel: 'Dave Gray • freeCodeCamp',
+    duration: '6 hrs',
+    difficulty: 'beginner',
+    videoId: 'kUMe1FH4CHE',
+    tags: ['frontend'],
+    priority: '🔴 MUST LEARN FIRST',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical',
+    desc: 'HTML5 is the absolute foundation of web development. Every single web application starts here. You cannot skip this. Learn semantic HTML, forms, accessibility, and best practices that employers actually check for.',
+    skills: ['Semantic HTML5','Forms & Validation','Accessibility','Meta Tags','SEO Basics','Canvas','Audio/Video','Data Attributes'],
+    learnItems: ['Document structure & DOCTYPE','Semantic elements (header, nav, main, article)','Forms, inputs, and validation','Tables and lists','HTML5 APIs (Canvas, localStorage)','Accessibility with ARIA','SEO-friendly markup','Embedding media']
+  },
+  {
+    id: 'css3',
+    phase: 1,
+    title: 'CSS3 — Style, Layout & Responsive Design',
+    channel: 'Dave Gray • Kevin Powell',
+    duration: '11 hrs',
+    difficulty: 'beginner',
+    videoId: 'OXGznpKZ_sA',
+    tags: ['frontend'],
+    priority: '🔴 MUST LEARN FIRST',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical',
+    desc: 'CSS3 makes the web beautiful and functional. Master Flexbox, CSS Grid, animations, and responsive design — these are tested in nearly every front-end interview. Modern German companies expect pixel-perfect UI skills.',
+    skills: ['Flexbox','CSS Grid','Animations','Media Queries','Custom Properties','Pseudo-classes','Transforms','Responsive Design'],
+    learnItems: ['Box model & selectors','Flexbox layout','CSS Grid system','Media queries & breakpoints','CSS variables','Animations & transitions','Pseudo-elements','Mobile-first design']
+  },
+  {
+    id: 'javascript',
+    phase: 1,
+    title: 'JavaScript — The Language of the Web',
+    channel: 'Bro Code',
+    duration: '12 hrs',
+    difficulty: 'beginner',
+    videoId: 'lfmg-EJ8gm4',
+    tags: ['frontend','backend','core'],
+    priority: '🔴 MUST LEARN FIRST',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical',
+    desc: 'JavaScript is the most important language in web development. It runs in the browser AND on servers. Every job listing mentions it. Master ES6+, DOM manipulation, async programming, and functional concepts.',
+    skills: ['ES6+ Syntax','DOM Manipulation','Async/Await','Promises','Fetch API','Closures','Prototypes','Array Methods'],
+    learnItems: ['Variables, types & operators','Functions & arrow functions','DOM manipulation','Events & event listeners','Promises & async/await','Fetch API & AJAX','Array & object methods','Error handling','Modules (ESM)','Classes & OOP']
+  },
+  {
+    id: 'git',
+    phase: 1,
+    title: 'Git & GitHub — Version Control for Professionals',
+    channel: 'freeCodeCamp',
+    duration: '3 hrs',
+    difficulty: 'beginner',
+    videoId: 'RGOj5yH7evk',
+    tags: ['tools','core'],
+    priority: '🔴 MUST LEARN FIRST',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical',
+    desc: 'Git is non-negotiable. You CANNOT get a tech job without knowing Git. Learn branching, merging, pull requests, and GitHub workflow. Every team uses this daily. German companies require strong Git discipline.',
+    skills: ['git init/add/commit','Branching','Merging','Pull Requests','GitHub','Git Flow','Rebasing','Conflict Resolution'],
+    learnItems: ['Init, stage, commit workflow','Branching & merging strategies','GitHub pull requests','Resolving merge conflicts','Git rebase','.gitignore best practices','Tags & releases','GitHub Actions basics']
+  },
+  {
+    id: 'react',
+    phase: 1,
+    title: 'React.js — The #1 Frontend Framework',
+    channel: 'Dave Gray',
+    duration: '9 hrs',
+    difficulty: 'intermediate',
+    videoId: 'RVFAyFWO4go',
+    tags: ['frontend'],
+    priority: '🔴 LEARN THIS EARLY',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical',
+    desc: 'React is used in 80%+ of German front-end job listings. JSX, components, hooks, state management — this is the most valuable skill for immediate employment. Build a portfolio project with React.',
+    skills: ['JSX','Components','useState/useEffect','Props','React Router','Context API','Custom Hooks','useReducer'],
+    learnItems: ['JSX and component syntax','Functional components','useState & useEffect hooks','Props & prop drilling','React Router v6','Context API','Custom hooks','Conditional rendering','Lists & keys','Forms in React']
+  },
+  {
+    id: 'typescript',
+    phase: 1,
+    title: 'TypeScript — JavaScript with Superpowers',
+    channel: 'Jack Herrington (No BS TS)',
+    duration: '5 hrs',
+    difficulty: 'intermediate',
+    videoId: '30LWjhZzg50',
+    tags: ['frontend','backend','core'],
+    priority: '🔴 HIGHLY DEMANDED',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical',
+    desc: 'TypeScript is now required or strongly preferred in 70%+ of German remote jobs. It catches bugs before runtime and makes large codebases maintainable. Companies like it because it reduces production bugs dramatically.',
+    skills: ['Types & Interfaces','Generics','Type Guards','Enums','Decorators','Utility Types','Union Types','Type Narrowing'],
+    learnItems: ['Type annotations','Interfaces vs types','Generics','Enums','Utility types (Partial, Pick, Omit)','Type guards','Discriminated unions','TypeScript with React','tsconfig.json','Declaration files (.d.ts)']
+  },
+  {
+    id: 'nodejs',
+    phase: 1,
+    title: 'Node.js & Express — Backend JavaScript',
+    channel: 'Dave Gray',
+    duration: '8 hrs',
+    difficulty: 'intermediate',
+    videoId: 'f2EqECiTBL8',
+    tags: ['backend'],
+    priority: '🔴 CRITICAL FOR FULLSTACK',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical',
+    desc: 'Node.js lets you use JavaScript on the server. Express.js is the framework used to build REST APIs. Together, they are the backend of the MERN/MEAN stacks that dominate German startup jobs.',
+    skills: ['Node.js Runtime','npm/yarn','Express.js','Middleware','Routing','File System','Streams','HTTP Module'],
+    learnItems: ['Node.js event loop','npm package management','Express setup & routing','Middleware pipeline','Request & response objects','Static files & templates','Environment variables','Error handling','File system operations','HTTP methods (GET, POST, PUT, DELETE)']
+  },
+  {
+    id: 'restapi',
+    phase: 1,
+    title: 'REST APIs — Design, Build & Consume APIs',
+    channel: 'freeCodeCamp',
+    duration: '4 hrs',
+    difficulty: 'intermediate',
+    videoId: 'GZ0F6FRA5J4',
+    tags: ['backend','frontend'],
+    priority: '🔴 FUNDAMENTAL SKILL',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical',
+    desc: 'Understanding REST APIs is fundamental to all web development. Every application communicates via APIs. Learn to design, build, document, and consume RESTful services with proper HTTP semantics.',
+    skills: ['HTTP Methods','Status Codes','JSON','Postman','CORS','Rate Limiting','Versioning','API Documentation'],
+    learnItems: ['REST principles','HTTP methods & status codes','JSON request/response','Building APIs with Express','CORS configuration','Authentication headers','API versioning','Postman & testing','Pagination','Error responses']
+  },
+  {
+    id: 'sql',
+    phase: 1,
+    title: 'SQL & PostgreSQL — Relational Databases',
+    channel: 'freeCodeCamp',
+    duration: '4 hrs',
+    difficulty: 'beginner',
+    videoId: 'qw--VYLpxG4',
+    tags: ['database'],
+    priority: '🔴 MUST KNOW',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical',
+    desc: 'SQL is used in virtually every application with persistent data. PostgreSQL is the most popular database in German tech companies. Master SELECT, JOIN, indexes, and transactions — these appear in technical interviews.',
+    skills: ['SELECT & WHERE','JOINs','GROUP BY','Indexes','Transactions','Constraints','Subqueries','PostgreSQL'],
+    learnItems: ['Database design & normalization','CREATE, INSERT, UPDATE, DELETE','SELECT with filtering','JOIN types (INNER, LEFT, RIGHT)','Aggregation & GROUP BY','Indexes & performance','Transactions & ACID','Subqueries','Views','PostgreSQL specifics']
+  },
+  {
+    id: 'commandline',
+    phase: 1,
+    title: 'Linux & Command Line — Every Developer\'s Tool',
+    channel: 'freeCodeCamp',
+    duration: '5 hrs',
+    difficulty: 'beginner',
+    videoId: 'sWbUDq4S6Y8',
+    tags: ['tools','devops'],
+    priority: '🔴 NON-NEGOTIABLE',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical',
+    desc: 'All servers run Linux. All DevOps tools are command-line based. You cannot be a professional developer without being comfortable in the terminal. Learn bash scripting, file system navigation, and process management.',
+    skills: ['Bash','File Navigation','Permissions','Processes','SSH','Shell Scripting','Pipes','Environment Variables'],
+    learnItems: ['File system navigation','File & directory operations','Permissions (chmod, chown)','Process management','SSH & remote access','Shell scripting basics','Pipes & redirection','Environment variables','Package managers (apt)','Cron jobs']
+  },
+
+  // ═══════════════════════════════════════════════════
+  // PHASE 2 — JOB READY (High demand, get employed faster)
+  // ═══════════════════════════════════════════════════
+  {
+    id: 'tailwind',
+    phase: 2,
+    title: 'Tailwind CSS — Utility-First Styling',
+    channel: 'Traversy Media',
+    duration: '2.5 hrs',
+    difficulty: 'beginner',
+    videoId: 'UBOj6rqrzvo',
+    tags: ['frontend'],
+    priority: '🟡 HIGHLY VALUED',
+    jobRelevance: '⭐⭐⭐⭐⭐ Very High',
+    desc: 'Tailwind CSS is now the default CSS framework for React-based projects. German startups use it extensively. Build beautiful UIs 3x faster. It is mentioned in 60%+ of front-end job listings with React.',
+    skills: ['Utility Classes','Responsive Utilities','Dark Mode','Custom Config','Component Patterns','JIT Mode','Tailwind UI','Forms Plugin'],
+    learnItems: ['Utility-first philosophy','Layout with Flexbox/Grid utilities','Typography utilities','Colors & spacing','Responsive breakpoints','Dark mode','Custom theme config','Extracting components','Forms & inputs','Animations']
+  },
+  {
+    id: 'nextjs',
+    phase: 2,
+    title: 'Next.js — React Framework for Production',
+    channel: 'Traversy Media',
+    duration: '7 hrs',
+    difficulty: 'intermediate',
+    videoId: 'Y6KDk5iyrYE',
+    tags: ['frontend','backend'],
+    priority: '🟡 VERY IN DEMAND',
+    jobRelevance: '⭐⭐⭐⭐⭐ Very High',
+    desc: 'Next.js is the React meta-framework used by most modern web apps. It handles SSR, SSG, routing, API routes, and deployment. German companies hiring React developers increasingly expect Next.js knowledge.',
+    skills: ['App Router','SSR/SSG/ISR','API Routes','Image Optimization','Server Components','Middleware','Edge Functions','Deployment'],
+    learnItems: ['Pages vs App Router','File-based routing','Server & client components','Data fetching patterns','API routes','Static generation','Server-side rendering','Image & font optimization','Middleware','Deploying to Vercel']
+  },
+  {
+    id: 'mongodb',
+    phase: 2,
+    title: 'MongoDB — NoSQL Database for Modern Apps',
+    channel: 'Traversy Media',
+    duration: '3 hrs',
+    difficulty: 'beginner',
+    videoId: 'ofme2o29ngU',
+    tags: ['database'],
+    priority: '🟡 POPULAR IN STARTUPS',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'MongoDB is the most popular NoSQL database and the M in MERN stack. Many German startups use it for flexible data models. Learn CRUD operations, aggregation pipeline, and Mongoose ODM.',
+    skills: ['Collections & Documents','CRUD Operations','Aggregation','Mongoose','Indexes','Schema Design','Atlas','Transactions'],
+    learnItems: ['Document model vs relational','CRUD with MongoDB shell','Mongoose schemas & models','Validation & middleware','Aggregation pipeline','Indexes & performance','Relationships in MongoDB','MongoDB Atlas (cloud)','Transactions','Data modeling patterns']
+  },
+  {
+    id: 'auth',
+    phase: 2,
+    title: 'Authentication & Authorization — JWT, OAuth2, Sessions',
+    channel: 'Traversy Media',
+    duration: '4 hrs',
+    difficulty: 'intermediate',
+    videoId: 'mbsmsi7l3r4',
+    tags: ['backend','security'],
+    priority: '🟡 ESSENTIAL FOR JOBS',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical',
+    desc: 'Every application needs authentication. JWT tokens, OAuth2 (Google/GitHub login), session management, bcrypt password hashing — these come up in every backend interview. Build a complete auth system.',
+    skills: ['JWT Tokens','OAuth2','bcrypt','Sessions','Cookies','Refresh Tokens','Role-Based Auth','Passport.js'],
+    learnItems: ['Password hashing with bcrypt','JWT creation & verification','Access & refresh token pattern','Session-based auth','OAuth2 flow (Google, GitHub)','RBAC (roles & permissions)','Middleware auth guards','Cookie security','Passport.js strategies','NextAuth.js']
+  },
+  {
+    id: 'testing',
+    phase: 2,
+    title: 'Testing — Unit, Integration & E2E Tests',
+    channel: 'freeCodeCamp',
+    duration: '5 hrs',
+    difficulty: 'intermediate',
+    videoId: 'r9HdJ8P6GQI',
+    tags: ['testing'],
+    priority: '🟡 DIFFERENTIATES CANDIDATES',
+    jobRelevance: '⭐⭐⭐⭐⭐ Very High',
+    desc: 'German companies have high code quality standards. Writing tests is NOT optional for senior roles. Learn Jest for unit tests, React Testing Library for components, and Cypress/Playwright for E2E — it will set you apart.',
+    skills: ['Jest','React Testing Library','Cypress','Vitest','Test Coverage','Mocking','TDD Basics','Integration Tests'],
+    learnItems: ['Testing philosophy & pyramid','Jest setup & assertions','Unit testing functions','Testing React components','Mocking modules & APIs','Integration testing','Cypress E2E tests','Test coverage reports','TDD workflow','Snapshot testing']
+  },
+  {
+    id: 'docker',
+    phase: 2,
+    title: 'Docker — Containerize Everything',
+    channel: 'freeCodeCamp',
+    duration: '5 hrs',
+    difficulty: 'intermediate',
+    videoId: 'fqMOX6JJhGo',
+    tags: ['devops'],
+    priority: '🟡 REQUIRED FOR MOST JOBS',
+    jobRelevance: '⭐⭐⭐⭐⭐ Very High',
+    desc: 'Docker is mentioned in 70%+ of web developer job listings in Germany. It solves the "works on my machine" problem. Learn to containerize apps, write Dockerfiles, and use Docker Compose for multi-service apps.',
+    skills: ['Containers','Dockerfile','docker-compose','Images','Volumes','Networks','Docker Hub','Multi-stage Builds'],
+    learnItems: ['Container vs VM concepts','Dockerfile instructions','Building & running images','Docker Compose setup','Volumes & persistence','Networking between containers','Multi-stage builds','Docker Hub registry','Environment variables','Production best practices']
+  },
+  {
+    id: 'http',
+    phase: 2,
+    title: 'HTTP & Web Protocols — How the Web Really Works',
+    channel: 'Traversy Media',
+    duration: '1.5 hrs',
+    difficulty: 'beginner',
+    videoId: 'iYM2zFP3Zn0',
+    tags: ['core','backend'],
+    priority: '🟡 FOUNDATION KNOWLEDGE',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'Understanding HTTP/HTTPS, DNS, TCP/IP, WebSockets, and how browsers work is essential for debugging and interviews. Every senior developer question eventually touches on these fundamentals.',
+    skills: ['HTTP/HTTPS','DNS','TCP/IP','WebSockets','Cookies','Headers','Caching','TLS/SSL'],
+    learnItems: ['HTTP request/response cycle','HTTP methods & status codes','Headers (Content-Type, CORS, Auth)','Cookies & sessions','HTTPS & TLS handshake','DNS resolution','Caching (Cache-Control, ETag)','WebSocket protocol','HTTP/2 & HTTP/3','Browser rendering pipeline']
+  },
+  {
+    id: 'prisma',
+    phase: 2,
+    title: 'Prisma ORM — Type-Safe Database Access',
+    channel: 'freeCodeCamp',
+    duration: '3 hrs',
+    difficulty: 'intermediate',
+    videoId: 'CYH04BJzamo',
+    tags: ['backend','database'],
+    priority: '🟡 MODERN BACKEND SKILL',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'Prisma is the modern ORM for TypeScript backends. It replaces raw SQL with type-safe queries and auto-generates types from your schema. Used widely in Next.js + TypeScript stacks popular in German tech companies.',
+    skills: ['Prisma Schema','Migrations','Prisma Client','Relations','CRUD Ops','Seed Data','Introspection','Transactions'],
+    learnItems: ['Prisma setup & schema','Model definitions','Database migrations','Type-safe queries','Relationships (1:1, 1:N, M:N)','Filtering & pagination','Seeding databases','Raw queries','Prisma Studio','Connecting to PostgreSQL']
+  },
+  {
+    id: 'statemanagement',
+    phase: 2,
+    title: 'State Management — Zustand, Redux, React Query',
+    channel: 'Jack Herrington',
+    duration: '4 hrs',
+    difficulty: 'intermediate',
+    videoId: 'W2RDtTgR8nM',
+    tags: ['frontend'],
+    priority: '🟡 REQUIRED FOR COMPLEX APPS',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'Real-world React apps need proper state management. Learn Zustand (simple, modern), Redux Toolkit (enterprise standard), and TanStack Query (server state). All three appear in German job requirements.',
+    skills: ['Zustand','Redux Toolkit','React Query','TanStack Query','Immer','DevTools','Selectors','Mutations'],
+    learnItems: ['Local vs global vs server state','Zustand setup & usage','Redux Toolkit slices','Async thunks','TanStack Query (useQuery)','Mutations & cache invalidation','Optimistic updates','DevTools debugging','When to use each library','Performance patterns']
+  },
+  {
+    id: 'css-advanced',
+    phase: 2,
+    title: 'Advanced CSS — Animations, Architecture & Modern Features',
+    channel: 'Kevin Powell',
+    duration: '6 hrs',
+    difficulty: 'intermediate',
+    videoId: '6biMWgD6_T4',
+    tags: ['frontend'],
+    priority: '🟡 STAND OUT WITH CSS MASTERY',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'Go beyond basics — CSS architecture (BEM, CUBE CSS), complex animations, scroll-driven animations, container queries, and CSS Houdini. Senior front-end roles expect mastery of modern CSS capabilities.',
+    skills: ['CSS Architecture','BEM','Keyframe Animations','Scroll Animations','Container Queries','CSS Layers','CSS Houdini','Logical Properties'],
+    learnItems: ['BEM methodology','CSS custom properties (advanced)','Complex keyframe animations','Scroll-driven animations','Container queries','@layer cascade management','Aspect-ratio & min/max','CSS Grid advanced patterns','Logical properties','CSS variables for theming']
+  },
+  {
+    id: 'webperf',
+    phase: 2,
+    title: 'Web Performance Optimization — Speed Matters',
+    channel: 'Google Chrome Developers',
+    duration: '3 hrs',
+    difficulty: 'intermediate',
+    videoId: 'AQqFZ5t8uNc',
+    tags: ['frontend','core'],
+    priority: '🟡 SENIOR DIFFERENTIATOR',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'Slow websites cost companies money. Learn Core Web Vitals (LCP, CLS, FID), lazy loading, code splitting, caching, and bundle optimization. Performance skills differentiate mid from senior developers.',
+    skills: ['Core Web Vitals','Lighthouse','Code Splitting','Lazy Loading','Bundle Analysis','Image Optimization','Caching','Webpack'],
+    learnItems: ['Core Web Vitals (LCP, CLS, INP)','Lighthouse audits','Code splitting & lazy imports','Dynamic imports in React','Image optimization strategies','Font loading optimization','Caching strategies','Bundle size analysis','Tree shaking','Critical CSS']
+  },
+
+  // ═══════════════════════════════════════════════════
+  // PHASE 3 — SENIOR LEVEL (Become undeniably valuable)
+  // ═══════════════════════════════════════════════════
+  {
+    id: 'graphql',
+    phase: 3,
+    title: 'GraphQL — Modern API Query Language',
+    channel: 'freeCodeCamp',
+    duration: '4 hrs',
+    difficulty: 'intermediate',
+    videoId: 'ed8SghFigEE',
+    tags: ['backend','frontend'],
+    priority: '🟢 SENIOR LEVEL SKILL',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'GraphQL is increasingly adopted by German enterprise and startup tech stacks. It solves over-fetching/under-fetching REST problems. Learn schema definition, resolvers, subscriptions, and Apollo Client.',
+    skills: ['Schema Definition','Resolvers','Apollo Server','Apollo Client','Subscriptions','Mutations','Fragments','Directives'],
+    learnItems: ['GraphQL vs REST','Type definitions (SDL)','Queries & mutations','Resolvers','Apollo Server setup','Apollo Client in React','Subscriptions (WebSockets)','Authentication in GraphQL','Fragments & aliases','Error handling']
+  },
+  {
+    id: 'redis',
+    phase: 3,
+    title: 'Redis — Caching, Sessions & Message Queues',
+    channel: 'freeCodeCamp',
+    duration: '3 hrs',
+    difficulty: 'intermediate',
+    videoId: 'jgpVdJB2sKQ',
+    tags: ['backend','database'],
+    priority: '🟢 BACKEND MASTERY',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'Redis is used in virtually every high-performance web application. Caching database queries, storing sessions, rate limiting, pub/sub messaging — Redis skills are expected for senior backend roles in Germany.',
+    skills: ['Key-Value Store','Caching Patterns','Sessions','Pub/Sub','Redis Streams','TTL','Lists & Hashes','Cluster'],
+    learnItems: ['Redis data structures','SET & GET operations','Expiry & TTL','Caching strategies (cache-aside)','Session storage in Redis','Pub/Sub messaging','Rate limiting with Redis','Sorted sets for leaderboards','Redis with Node.js (ioredis)','Redis Cluster basics']
+  },
+  {
+    id: 'cicd',
+    phase: 3,
+    title: 'CI/CD — GitHub Actions & Automated Deployments',
+    channel: 'Traversy Media',
+    duration: '2.5 hrs',
+    difficulty: 'intermediate',
+    videoId: 'R8_veQiYBjI',
+    tags: ['devops'],
+    priority: '🟢 REQUIRED FOR SENIOR',
+    jobRelevance: '⭐⭐⭐⭐⭐ Very High',
+    desc: 'CI/CD is in 80%+ of German dev job listings. Automated testing, building, and deployment pipelines are what professional teams live by. GitHub Actions is the most in-demand tool — learn it deeply.',
+    skills: ['GitHub Actions','Workflows','YAML','Jobs & Steps','Secrets','Matrix Builds','Deployment','Docker in CI'],
+    learnItems: ['CI/CD philosophy','GitHub Actions YAML syntax','Trigger events','Jobs & steps configuration','Environment secrets','Matrix builds (multi-node)','Docker build in CI','Deploy to cloud on merge','Branch protection rules','Monitoring pipelines']
+  },
+  {
+    id: 'aws',
+    phase: 3,
+    title: 'AWS Cloud — EC2, S3, Lambda, RDS, CloudFront',
+    channel: 'freeCodeCamp',
+    duration: '7 hrs',
+    difficulty: 'intermediate',
+    videoId: 'ulprqHHWlng',
+    tags: ['devops'],
+    priority: '🟢 CLOUD IS THE FUTURE',
+    jobRelevance: '⭐⭐⭐⭐⭐ Very High',
+    desc: 'AWS has 33% cloud market share and is used by most German tech companies. EC2 for servers, S3 for storage, Lambda for serverless, RDS for databases, and CloudFront for CDN. AWS certification boosts your profile significantly.',
+    skills: ['EC2','S3','Lambda','RDS','CloudFront','IAM','Route 53','VPC'],
+    learnItems: ['AWS Free Tier setup','EC2 instance management','S3 buckets & static hosting','IAM users & policies','RDS database hosting','Lambda functions','API Gateway','CloudFront CDN','Route 53 DNS','VPC basics']
+  },
+  {
+    id: 'kubernetes',
+    phase: 3,
+    title: 'Kubernetes — Container Orchestration at Scale',
+    channel: 'freeCodeCamp',
+    duration: '4 hrs',
+    difficulty: 'advanced',
+    videoId: 'd6WC5n9G_sM',
+    tags: ['devops'],
+    priority: '🟢 DEVOPS MASTERY',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'Kubernetes is the industry standard for deploying containerized applications at scale. German enterprise companies expect K8s knowledge. Learn pods, services, deployments, and Helm charts.',
+    skills: ['Pods','Deployments','Services','Ingress','ConfigMaps','Secrets','Helm','kubectl'],
+    learnItems: ['K8s architecture & components','kubectl commands','Pods & containers','Deployments & rolling updates','Services (ClusterIP, NodePort, LoadBalancer)','ConfigMaps & Secrets','Persistent volumes','Ingress controllers','Helm package manager','Horizontal pod autoscaling']
+  },
+  {
+    id: 'websockets',
+    phase: 3,
+    title: 'WebSockets & Real-Time Apps with Socket.io',
+    channel: 'freeCodeCamp',
+    duration: '3 hrs',
+    difficulty: 'intermediate',
+    videoId: '2Nt-ZrNP22A',
+    tags: ['backend','frontend'],
+    priority: '🟢 REAL-TIME SKILLS',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'Real-time features (chat, live updates, notifications, collaborative tools) are in every modern SaaS product. Socket.io makes WebSocket implementation simple. Build a real-time chat app for your portfolio.',
+    skills: ['WebSocket Protocol','Socket.io','Rooms & Namespaces','Events','Broadcasting','Reconnection','Scaling with Redis','SSE'],
+    learnItems: ['WebSocket handshake','Socket.io server setup','Emit & on events','Rooms & namespaces','Broadcasting to groups','Connection & disconnect handling','Scaling with Redis adapter','Server-Sent Events (SSE)','Real-time notifications','Collaborative features']
+  },
+  {
+    id: 'microservices',
+    phase: 3,
+    title: 'Microservices Architecture — Build Scalable Systems',
+    channel: 'freeCodeCamp',
+    duration: '5 hrs',
+    difficulty: 'advanced',
+    videoId: 'zuegMJpSgBY',
+    tags: ['backend','devops'],
+    priority: '🟢 ARCHITECT SKILLS',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'Large German companies (SAP, Deutsche Telekom, Zalando) use microservices architecture. Understanding service boundaries, API gateways, message queues, and event-driven design makes you a senior-level engineer.',
+    skills: ['Service Design','API Gateway','Message Queues','Event Bus','Service Discovery','CQRS','Event Sourcing','RabbitMQ'],
+    learnItems: ['Monolith vs microservices','Domain-driven design basics','Service communication (REST, gRPC)','API Gateway pattern','Message queues (RabbitMQ, Kafka)','Event-driven architecture','Service discovery','Circuit breaker pattern','Distributed tracing','CQRS pattern']
+  },
+  {
+    id: 'systemdesign',
+    phase: 3,
+    title: 'System Design — Design Scalable Web Systems',
+    channel: 'Gaurav Sen',
+    duration: '8 hrs',
+    difficulty: 'advanced',
+    videoId: 'xpDnVSmNFX0',
+    tags: ['core','backend'],
+    priority: '🟢 INTERVIEW ESSENTIAL',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical for Senior',
+    desc: 'System design interviews are required for mid-to-senior roles. Learn to design URL shorteners, social media feeds, video streaming, and distributed databases. German tech interviews increasingly include system design rounds.',
+    skills: ['Load Balancing','Caching Strategies','Database Sharding','CDN','Message Queues','Rate Limiting','CAP Theorem','Distributed Systems'],
+    learnItems: ['Scalability principles','Load balancers','Horizontal vs vertical scaling','Database sharding & replication','Caching layers (CDN, Redis)','Message queues for async processing','CAP theorem','Consistent hashing','API design best practices','Case studies (Twitter, YouTube)']
+  },
+  {
+    id: 'devtools',
+    phase: 3,
+    title: 'Browser DevTools, Debugging & Profiling',
+    channel: 'Google Chrome Developers',
+    duration: '2 hrs',
+    difficulty: 'intermediate',
+    videoId: 'KykP5Z5E4kA',
+    tags: ['tools','frontend'],
+    priority: '🟢 PROFESSIONAL DEBUGGING',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'Mastering DevTools separates professional developers from beginners. Network analysis, performance profiling, memory leaks, JavaScript debugging, and layout analysis are daily tasks on the job.',
+    skills: ['Network Panel','Performance Profiler','Memory Analysis','Breakpoints','Source Maps','React DevTools','Lighthouse','Console API'],
+    learnItems: ['Elements panel & CSS editing','JavaScript breakpoints','Network request analysis','Performance timeline recording','Memory heap snapshots','Coverage analysis','Mobile device emulation','React DevTools profiler','Custom formatters','Console API tricks']
+  },
+
+  // ═══════════════════════════════════════════════════
+  // PHASE 4 — SPECIALIZATIONS (Deep expertise areas)
+  // ═══════════════════════════════════════════════════
+  {
+    id: 'security',
+    phase: 4,
+    title: 'Web Security — OWASP Top 10 & Secure Coding',
+    channel: 'freeCodeCamp',
+    duration: '4 hrs',
+    difficulty: 'intermediate',
+    videoId: 'F5KJVuii0Yw',
+    tags: ['security'],
+    priority: '🔷 SPECIALIZATION',
+    jobRelevance: '⭐⭐⭐⭐⭐ Critical (Senior)',
+    desc: 'Security skills are increasingly required in Germany due to GDPR and EU regulations. Learn to prevent SQL injection, XSS, CSRF, secure headers, rate limiting, and implement OWASP Top 10 mitigations.',
+    skills: ['OWASP Top 10','XSS Prevention','SQL Injection','CSRF','Security Headers','HTTPS/TLS','Input Validation','Penetration Testing Basics'],
+    learnItems: ['OWASP Top 10 vulnerabilities','SQL injection prevention','XSS attacks & prevention','CSRF tokens','Content Security Policy (CSP)','Security headers (Helmet.js)','Rate limiting & brute force prevention','Input sanitization','Password security','Dependency vulnerability scanning']
+  },
+  {
+    id: 'aiintegration',
+    phase: 4,
+    title: 'AI Integration — OpenAI, Anthropic APIs & LLM Apps',
+    channel: 'freeCodeCamp',
+    duration: '5 hrs',
+    difficulty: 'intermediate',
+    videoId: 'uRQH2CFvedY',
+    tags: ['ai','backend'],
+    priority: '🔷 HOTTEST SKILL 2025',
+    jobRelevance: '⭐⭐⭐⭐⭐ Skyrocketing',
+    desc: 'AI integration is the fastest-growing skill in German tech. Build apps with ChatGPT API, Claude API, and RAG (Retrieval Augmented Generation). Companies paying 30%+ premium for developers who can integrate AI features.',
+    skills: ['OpenAI API','Anthropic Claude API','LangChain','Vector Databases','RAG','Prompt Engineering','Streaming','Embeddings'],
+    learnItems: ['OpenAI API basics','Chat completions','Function calling (tool use)','Claude API integration','LangChain framework','Vector databases (Pinecone, Supabase)','Embeddings & semantic search','RAG pipeline','Streaming responses','AI SDK (Vercel)']
+  },
+  {
+    id: 'saas',
+    phase: 4,
+    title: 'SaaS Architecture — Build & Launch a SaaS Product',
+    channel: 'Traversy Media',
+    duration: '4 hrs',
+    difficulty: 'advanced',
+    videoId: 'cxGVlrSfz0s',
+    tags: ['backend','frontend'],
+    priority: '🔷 ENTREPRENEURIAL SKILL',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'Understanding SaaS architecture opens doors to senior roles and entrepreneurship. Learn multi-tenancy, subscription billing (Stripe), feature flags, analytics, and customer onboarding flows.',
+    skills: ['Multi-tenancy','Stripe Payments','Subscription Billing','Feature Flags','Analytics','Customer Onboarding','Email Systems','SaaS Metrics'],
+    learnItems: ['Multi-tenant database design','Stripe integration & webhooks','Subscription management','Feature flags (LaunchDarkly)','User analytics & funnels','Email systems (Resend, Sendgrid)','Onboarding flows','SaaS metrics (MRR, churn)','Pricing strategies','SLA & uptime']
+  },
+  {
+    id: 'pwa',
+    phase: 4,
+    title: 'Progressive Web Apps — Native-Like Web Experiences',
+    channel: 'Google Chrome Developers',
+    duration: '2.5 hrs',
+    difficulty: 'intermediate',
+    videoId: 'ksKHOvOcOcU',
+    tags: ['frontend'],
+    priority: '🔷 MODERN WEB SKILL',
+    jobRelevance: '⭐⭐⭐ Medium',
+    desc: 'PWAs combine web and native app capabilities — offline support, push notifications, home screen install, and fast loading. Used by major German companies like Zalando and Deutsche Bahn for mobile-first experiences.',
+    skills: ['Service Workers','Web App Manifest','Cache API','Push Notifications','IndexedDB','Offline First','Background Sync','App Shell'],
+    learnItems: ['PWA concepts & checklist','Service worker lifecycle','Cache strategies (cache-first, network-first)','Web App Manifest','Push notifications','IndexedDB for offline data','Background sync','Workbox library','App shell architecture','Lighthouse PWA audit']
+  },
+  {
+    id: 'accessibility',
+    phase: 4,
+    title: 'Web Accessibility (a11y) — Inclusive Web Development',
+    channel: 'Kevin Powell',
+    duration: '3 hrs',
+    difficulty: 'intermediate',
+    videoId: 'e2nkq3h1P68',
+    tags: ['frontend','core'],
+    priority: '🔷 LEGAL REQUIREMENT IN EU',
+    jobRelevance: '⭐⭐⭐⭐ High (EU Law)',
+    desc: 'The EU Web Accessibility Act mandates accessibility for public websites. German companies are legally required to meet WCAG 2.1 AA standards. Accessibility skills are increasingly required and valued in German job postings.',
+    skills: ['WCAG 2.1','ARIA','Screen Readers','Color Contrast','Focus Management','Keyboard Navigation','Semantic HTML','Testing Tools'],
+    learnItems: ['WCAG 2.1 principles (POUR)','Semantic HTML for a11y','ARIA roles & attributes','Keyboard navigation patterns','Focus management','Color contrast ratios','Screen reader testing','Skip links','Accessible forms','Automated a11y testing (axe)']
+  },
+  {
+    id: 'monitoring',
+    phase: 4,
+    title: 'Monitoring & Observability — Logs, Metrics & Tracing',
+    channel: 'TechWorld with Nana',
+    duration: '3 hrs',
+    difficulty: 'intermediate',
+    videoId: 'yrscZ-kGc_Y',
+    tags: ['devops'],
+    priority: '🔷 PRODUCTION SKILLS',
+    jobRelevance: '⭐⭐⭐⭐ High',
+    desc: 'Production applications need monitoring. Learn Prometheus & Grafana for metrics, the ELK Stack for logging, and Sentry for error tracking. On-call engineers need these skills — they dramatically increase your value.',
+    skills: ['Prometheus','Grafana','Sentry','ELK Stack','Distributed Tracing','Alerting','Log Management','Error Tracking'],
+    learnItems: ['Logging best practices','Structured logging (JSON)','Prometheus metrics','Grafana dashboards','Sentry error tracking','Distributed tracing (Jaeger)','Alerting rules','Log aggregation (Elasticsearch)','Uptime monitoring','SLO/SLA concepts']
+  },
+  {
+    id: 'vuejs',
+    phase: 4,
+    title: 'Vue.js — The Progressive JavaScript Framework',
+    channel: 'freeCodeCamp',
+    duration: '5 hrs',
+    difficulty: 'intermediate',
+    videoId: 'FXpIoQ_rT_c',
+    tags: ['frontend'],
+    priority: '🔷 ALTERNATIVE FRAMEWORK',
+    jobRelevance: '⭐⭐⭐ Medium-High',
+    desc: 'Vue.js is popular in European companies (especially in Germany and Netherlands). Some German companies prefer Vue over React. Learning it as a second framework doubles your job opportunities.',
+    skills: ['Options API','Composition API','Vuex/Pinia','Vue Router','Nuxt.js','Directives','Computed & Watch','Slots'],
+    learnItems: ['Vue instance & template syntax','Composition API','Reactive data & computed','Component communication','Vue Router','Pinia state management','Nuxt.js (SSR for Vue)','Directives (v-if, v-for)','Watchers','Vue DevTools']
+  },
+  {
+    id: 'angular',
+    phase: 4,
+    title: 'Angular — Enterprise Frontend Framework',
+    channel: 'freeCodeCamp',
+    duration: '6 hrs',
+    difficulty: 'intermediate',
+    videoId: '3qBXWUpoPHo',
+    tags: ['frontend'],
+    priority: '🔷 ENTERPRISE GERMANY',
+    jobRelevance: '⭐⭐⭐ Medium-High',
+    desc: 'Angular is dominant in German enterprise companies (banking, insurance, SAP ecosystem). If targeting large German enterprise clients rather than startups, Angular is essential. TypeScript-first framework.',
+    skills: ['Components','Services','Modules','RxJS','NgRx','Forms','HTTP Client','Routing'],
+    learnItems: ['Angular architecture','Components & templates','Dependency injection','Services & HTTP','RxJS observables','Angular Router','Reactive forms','NgRx state management','Pipes & directives','Angular CLI']
+  },
+
+  // ═══════════════════════════════════════════════════
+  // PHASE 5 — ADVANCED / OPTIONAL (Power user skills)
+  // ═══════════════════════════════════════════════════
+  {
+    id: 'webassembly',
+    phase: 5,
+    title: 'WebAssembly & Rust — Next-Gen Web Performance',
+    channel: 'freeCodeCamp',
+    duration: '5 hrs',
+    difficulty: 'advanced',
+    videoId: 'gF35IQXRUAU',
+    tags: ['core','frontend'],
+    priority: '🟣 CUTTING EDGE',
+    jobRelevance: '⭐⭐⭐ Niche but Growing',
+    desc: 'WebAssembly enables near-native performance in the browser. Rust compiled to WASM is used for compute-intensive web apps (image editing, video processing, gaming). A very unique and impressive skill.',
+    skills: ['Rust Basics','WASM Compilation','wasm-pack','JavaScript Interop','Memory Management','Performance','wasm-bindgen','Web Workers'],
+    learnItems: ['Rust basics (ownership, lifetimes)','Compiling Rust to WebAssembly','wasm-pack & wasm-bindgen','Calling WASM from JavaScript','Sharing memory (ArrayBuffer)','Web Workers for parallelism','AssemblyScript alternative','WASM use cases','Performance profiling','Integration with React']
+  },
+  {
+    id: 'reactnative',
+    phase: 5,
+    title: 'React Native & Expo — Build Mobile Apps',
+    channel: 'freeCodeCamp',
+    duration: '8 hrs',
+    difficulty: 'intermediate',
+    videoId: 'obH0Po_RdWk',
+    tags: ['frontend'],
+    priority: '🟣 EXPAND YOUR MARKET',
+    jobRelevance: '⭐⭐⭐ Medium',
+    desc: 'React Native lets you build iOS and Android apps with your existing React skills. Expo simplifies the workflow dramatically. German companies increasingly want full-stack developers who can also build mobile.',
+    skills: ['React Native Components','Expo SDK','Navigation','Native APIs','Animations','StyleSheet','Platform APIs','App Store Deployment'],
+    learnItems: ['React Native vs React differences','Expo project setup','Core components (View, Text, Image)','Flexbox for mobile','Navigation (React Navigation)','Native device APIs','Async Storage','Network requests','Animations with Reanimated','Building for iOS/Android']
+  },
+  {
+    id: 'web3',
+    phase: 5,
+    title: 'Web3 & Blockchain — Decentralized Web Development',
+    channel: 'freeCodeCamp',
+    duration: '6 hrs',
+    difficulty: 'advanced',
+    videoId: 'M576WGiDBdQ',
+    tags: ['core'],
+    priority: '🟣 NICHE OPPORTUNITIES',
+    jobRelevance: '⭐⭐ Niche Market',
+    desc: 'Blockchain development opens a niche but high-paying market. Ethereum smart contracts with Solidity, DeFi protocols, NFTs, and dApp development. Berlin has a strong crypto/Web3 startup scene.',
+    skills: ['Solidity','Ethereum','Smart Contracts','Web3.js','ethers.js','Hardhat','DeFi','IPFS'],
+    learnItems: ['Blockchain fundamentals','Ethereum virtual machine','Solidity syntax & data types','Smart contract security','Hardhat development framework','Web3.js / ethers.js','MetaMask integration','DeFi protocols','NFT standards (ERC-721)','IPFS for decentralized storage']
+  },
+  {
+    id: 'electron',
+    phase: 5,
+    title: 'Electron — Build Cross-Platform Desktop Apps',
+    channel: 'Traversy Media',
+    duration: '3 hrs',
+    difficulty: 'intermediate',
+    videoId: 'ML743nrkMHw',
+    tags: ['frontend'],
+    priority: '🟣 UNIQUE SKILL',
+    jobRelevance: '⭐⭐ Niche',
+    desc: 'Electron lets you build desktop apps (Windows, Mac, Linux) with web technologies. VS Code, Slack, Discord are all built with Electron. A unique differentiating skill for developers who want to target desktop markets.',
+    skills: ['Main & Renderer Process','IPC Communication','Native Menus','File System Access','Auto Updates','Packaging','System Tray','Notifications'],
+    learnItems: ['Electron architecture','Main vs renderer process','IPC communication','Native OS integration','File system access','System tray & menus','Auto-updater','Building & packaging','Security in Electron','Electron Forge']
+  },
+  {
+    id: 'dsa',
+    phase: 5,
+    title: 'Data Structures & Algorithms — FAANG Interview Prep',
+    channel: 'freeCodeCamp',
+    duration: '10 hrs',
+    difficulty: 'advanced',
+    videoId: 'pkYVOmU3MgA',
+    tags: ['core'],
+    priority: '🟣 INTERVIEW PREP',
+    jobRelevance: '⭐⭐⭐ High for FAANG',
+    desc: 'Essential for technical interviews at large companies. Arrays, linked lists, trees, graphs, dynamic programming, and Big O notation. German companies like SAP, Zalando, and international companies require this.',
+    skills: ['Arrays & Strings','Linked Lists','Trees & Graphs','Dynamic Programming','Binary Search','Hash Maps','Sorting','Big O Notation'],
+    learnItems: ['Big O time & space complexity','Array manipulation techniques','Linked list operations','Stack & queue patterns','Binary trees & BST','Graph traversal (BFS, DFS)','Dynamic programming patterns','Binary search variations','Heap & priority queues','Two pointers & sliding window']
+  },
+  {
+    id: 'designsystems',
+    phase: 5,
+    title: 'Design Systems & Component Libraries — Build & Maintain',
+    channel: 'Storybook',
+    duration: '3 hrs',
+    difficulty: 'intermediate',
+    videoId: 'BDDmLEBGBio',
+    tags: ['frontend'],
+    priority: '🟣 TEAM SCALE SKILLS',
+    jobRelevance: '⭐⭐⭐ High for Large Teams',
+    desc: 'Large companies maintain design systems to ensure UI consistency. Learn Storybook for component development, how to build reusable component libraries, and how to publish packages to npm.',
+    skills: ['Storybook','Component APIs','Theming','Tokens','Accessibility','npm Publishing','Documentation','Monorepos'],
+    learnItems: ['Design token principles','Storybook setup & stories','Component API design','Theming with CSS variables','Dark mode implementation','Accessibility in components','npm package publishing','Versioning & changelog','Monorepo with Turborepo','Documentation with Storybook Docs']
+  }
+];
+
+// ============================================================
+// STATE
+// ============================================================
+let activeFilter = 'all';
+let searchQuery = '';
+let currentCourseId = null;
+
+function getProgress() {
+  try { return JSON.parse(localStorage.getItem('roadmap_progress') || '{}'); }
+  catch { return {}; }
+}
+
+function saveProgress(p) {
+  localStorage.setItem('roadmap_progress', JSON.stringify(p));
+}
+
+function getNotes() {
+  try { return JSON.parse(localStorage.getItem('roadmap_notes') || '{}'); }
+  catch { return {}; }
+}
+
+function saveNotes(n) {
+  localStorage.setItem('roadmap_notes', JSON.stringify(n));
+}
+
+// ============================================================
+// RENDER
+// ============================================================
+function render() {
+  const progress = getProgress();
+  const phases = [1, 2, 3, 4, 5];
+  const phaseInfo = {
+    1: { label: 'Phase 1 — Core Essentials', tag: '⚡ LEARN FIRST — Maximum Employability', desc: 'The absolute must-haves. Master these 10 topics and you can apply for junior web developer positions. This is your fastest path to getting hired.', icon: '⚡', cls: 'phase1' },
+    2: { label: 'Phase 2 — Job Ready', tag: '🚀 HIGH DEMAND — Get Employed Fast', desc: 'Building on Phase 1, these skills make you a strong junior-to-mid candidate for remote German jobs. Most job listings require 2-3 Phase 2 skills alongside Phase 1.', icon: '🚀', cls: 'phase2' },
+    3: { label: 'Phase 3 — Senior Level', tag: '🔥 SENIOR SKILLS — Command Higher Salaries', desc: 'These skills push you from junior to mid-senior. DevOps, system design, and advanced backend skills are what German companies pay premium salaries for.', icon: '🔥', cls: 'phase3' },
+    4: { label: 'Phase 4 — Specializations', tag: '💎 EXPERT TERRITORY — Become The #1 Candidate', desc: 'Deep expertise in specific domains. Choose based on your interests — AI integration is the hottest area in 2025. Security is legally required in EU. Vue/Angular expand your options.', icon: '💎', cls: 'phase4' },
+    5: { label: 'Phase 5 — Advanced / Optional', tag: '🌌 ELITE SKILLS — Stand Out From Everyone', desc: 'Cutting-edge and niche technologies. Learn these after mastering Phases 1-3 to differentiate yourself from all other candidates and open up specialized high-paying markets.', icon: '🌌', cls: 'phase5' }
+  };
+
+  const container = document.getElementById('main-content');
+  container.innerHTML = '';
+
+  let totalAll = 0, completedAll = 0;
+
+  phases.forEach(phase => {
+    const courses = roadmap.filter(c => c.phase === phase);
+    const filtered = courses.filter(c => matchesCourse(c, progress));
+
+    const phaseCompleted = courses.filter(c => progress[c.id]).length;
+    const phaseTotal = courses.length;
+    const phasePct = Math.round((phaseCompleted / phaseTotal) * 100);
+
+    totalAll += phaseTotal;
+    completedAll += phaseCompleted;
+
+    // Update hero counts
+    const heroEl = document.getElementById(`phase${phase}-total`);
+    if (heroEl) heroEl.textContent = phaseTotal;
+
+    if (filtered.length === 0 && (activeFilter !== 'all' || searchQuery)) return;
+
+    const section = document.createElement('section');
+    section.className = `phase-section ${phaseInfo[phase].cls}`;
+    section.id = `phase${phase}`;
+
+    section.innerHTML = `
+      <div class="phase-header">
+        <div class="phase-icon">${phaseInfo[phase].icon}</div>
+        <div class="phase-meta">
+          <div class="phase-tag">${phaseInfo[phase].tag}</div>
+          <div class="phase-title">${phaseInfo[phase].label}</div>
+          <div class="phase-desc">${phaseInfo[phase].desc}</div>
+        </div>
+        <div class="phase-progress-wrap">
+          <div class="phase-pct">${phasePct}%</div>
+          <div class="phase-bar"><div class="fill" style="width:${phasePct}%"></div></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--text-muted);margin-top:0.35rem;text-align:right">${phaseCompleted}/${phaseTotal}</div>
+        </div>
+      </div>
+      <div class="course-grid" id="grid-phase${phase}"></div>
+    `;
+
+    container.appendChild(section);
+
+    const grid = section.querySelector(`#grid-phase${phase}`);
+    filtered.forEach((course, idx) => {
+      grid.appendChild(makeCourseCard(course, progress, idx + 1));
+    });
+  });
+
+  // Update header stats
+  document.getElementById('completed-count').textContent = completedAll;
+  document.getElementById('total-count').textContent = totalAll;
+  const overallPct = totalAll ? Math.round((completedAll / totalAll) * 100) : 0;
+  document.getElementById('overall-pct').textContent = overallPct + '%';
+  document.getElementById('overall-bar').style.width = overallPct + '%';
+}
+
+function matchesCourse(course, progress) {
+  const q = searchQuery.toLowerCase();
+  const matchesSearch = !q ||
+    course.title.toLowerCase().includes(q) ||
+    course.desc.toLowerCase().includes(q) ||
+    course.skills.some(s => s.toLowerCase().includes(q)) ||
+    course.tags.some(t => t.toLowerCase().includes(q));
+
+  const matchesFilter = activeFilter === 'all' ||
+    (activeFilter === 'completed' && progress[course.id]) ||
+    course.tags.includes(activeFilter);
+
+  return matchesSearch && matchesFilter;
+}
+
+function makeCourseCard(course, progress, rank) {
+  const done = !!progress[course.id];
+  const div = document.createElement('div');
+  div.className = `course-card${done ? ' completed' : ''}`;
+  div.dataset.id = course.id;
+
+  const diffClass = `diff-${course.difficulty}`;
+  const diffLabel = course.difficulty.charAt(0).toUpperCase() + course.difficulty.slice(1);
+
+  const tagsHtml = course.tags.map(t => `<span class="tag tag-${t}">${t}</span>`).join('');
+
+  const skillsHtml = course.skills.slice(0, 5).map(s => `<span class="skill-chip">${s}</span>`).join('');
+
+  div.innerHTML = `
+    <div class="course-thumb" onclick="openModal('${course.id}')">
+      <img src="https://img.youtube.com/vi/${course.videoId}/mqdefault.jpg"
+           onerror="this.parentElement.innerHTML='<div class=\\'thumb-placeholder\\'>🎬</div>'"
+           alt="${course.title}" loading="lazy">
+      <div class="play-overlay"><div class="play-btn-big">▶</div></div>
+      <div class="course-rank">#${rank}</div>
+      <div class="course-duration">⏱ ${course.duration}</div>
+    </div>
+    <div class="course-body">
+      <div class="course-tags">${tagsHtml} <span class="difficulty-badge ${diffClass}">${diffLabel}</span></div>
+      <div class="course-title">${course.title}</div>
+      <div class="course-channel">📺 ${course.channel}</div>
+      <div class="course-desc">${course.desc.substring(0, 130)}...</div>
+      <div class="course-skills">${skillsHtml}</div>
+      <div class="course-footer">
+        <button class="watch-btn" onclick="openModal('${course.id}')">▶ Watch & Learn</button>
+        <button class="complete-btn" onclick="toggleComplete('${course.id}', event)" title="${done ? 'Mark incomplete' : 'Mark complete'}">${done ? '✓' : '○'}</button>
+      </div>
+    </div>
+  `;
+
+  return div;
+}
+
+// ============================================================
+// INTERACTIONS
+// ============================================================
+function toggleComplete(id, event) {
+  if (event) event.stopPropagation();
+  const progress = getProgress();
+  progress[id] = !progress[id];
+  if (!progress[id]) delete progress[id];
+  saveProgress(progress);
+  render();
+  showToast(progress[id] ? '✅ Marked as complete!' : '○ Marked as incomplete');
+  if (currentCourseId === id) updateModalButtons(id);
+}
+
+function toggleCompleteFromModal() {
+  if (!currentCourseId) return;
+  toggleComplete(currentCourseId, null);
+}
+
+function updateModalButtons(id) {
+  const progress = getProgress();
+  const done = !!progress[id];
+  const btn = document.getElementById('modal-mark-btn');
+  if (btn) btn.textContent = done ? '✓ Completed! Click to Undo' : '✓ Mark as Complete';
+}
+
+function openModal(id) {
+  const course = roadmap.find(c => c.id === id);
+  if (!course) return;
+  currentCourseId = id;
+
+  document.getElementById('modal-title').textContent = course.title;
+  document.getElementById('modal-channel').textContent = '📺 ' + course.channel;
+  document.getElementById('modal-duration').textContent = course.duration;
+  document.getElementById('modal-difficulty').textContent = course.difficulty.charAt(0).toUpperCase() + course.difficulty.slice(1);
+  document.getElementById('modal-phase').textContent = 'Phase ' + course.phase;
+  document.getElementById('modal-relevance').textContent = course.jobRelevance;
+  document.getElementById('modal-desc').textContent = course.desc;
+
+  document.getElementById('modal-tags').innerHTML = course.tags.map(t => `<span class="tag tag-${t}">${t}</span>`).join('') + ` <span class="difficulty-badge diff-${course.difficulty}">${course.difficulty}</span>`;
+
+  const learnHtml = course.learnItems.map(item => `<div class="learn-item">${item}</div>`).join('');
+  document.getElementById('modal-learn').innerHTML = learnHtml;
+
+  document.getElementById('modal-iframe').src = `https://www.youtube.com/embed/${course.videoId}?autoplay=1&rel=0`;
+  document.getElementById('modal-yt-link').href = `https://www.youtube.com/watch?v=${course.videoId}`;
+
+  const notes = getNotes();
+  document.getElementById('modal-notes').value = notes[id] || '';
+
+  updateModalButtons(id);
+
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.getElementById('modal-iframe').src = '';
+  document.body.style.overflow = '';
+
+  // Save notes
+  if (currentCourseId) {
+    const notes = getNotes();
+    const text = document.getElementById('modal-notes').value.trim();
+    if (text) notes[currentCourseId] = text;
+    else delete notes[currentCourseId];
+    saveNotes(notes);
+  }
+  currentCourseId = null;
+}
+
+function closeModalIfOutside(event) {
+  if (event.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+function setFilter(filter, btn) {
+  activeFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+function filterCourses() {
+  searchQuery = document.getElementById('search-input').value;
+  render();
+}
+
+function resetAllProgress() {
+  if (confirm('Reset ALL progress? This cannot be undone.')) {
+    localStorage.removeItem('roadmap_progress');
+    render();
+    showToast('🔄 Progress reset!');
+  }
+}
+
+function scrollToPhase(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+// BACK TO TOP
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('back-top');
+  btn.classList.toggle('visible', window.scrollY > 600);
+});
+
+// KEYBOARD
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+// INIT
+render();
+</script>
+</body>
+</html>
